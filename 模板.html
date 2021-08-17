@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" id="viewportMeta" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+		var initViewport = function(height){
+		var metaEl = document.querySelector("#viewportMeta");
+		var content = "width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,height=" + height;
+		metaEl.setAttribute('name', 'viewport');
+		metaEl.setAttribute('content', content);
+		}
+		initViewport(window.innerHeight);
+
+		var addEvenListener = function(callback, eventName) {
+    	let addEvenListenerFn = window.addEventListener || window.attatchEvent;
+    	let messageEvent = window.addEventListener ? eventName : "on" + eventName;
+    	addEvenListenerFn(messageEvent, callback, false);
+ 		}
+  
+		addEvenListener(function(){
+		setTimeout(function(){
+		initViewport(window.innerHeight);
+		},300)
+		},"orientationchange")
+    </script>
+</body>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+          
+      },
+	  methods: {
+		  
+	  }
+    })
+  </script>
+</html>
